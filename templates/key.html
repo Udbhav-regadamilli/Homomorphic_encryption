@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/bootstrap.css')}}"
+    />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--owl slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <!-- font awesome style -->
+    <link
+      href="{{ url_for('static', filename='css/font-awesome.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link
+      href="{{ url_for('static', filename='css/style.css')}}"
+      rel="stylesheet"
+    />
+    <!-- responsive style -->
+    <link
+      href="{{ url_for('static', filename='css/responsive.css')}}"
+      rel="stylesheet"
+    />
+    <title>Key Generation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: white;
+        margin: 50px;
+        background: url("{{ url_for('static', filename='images/key.jpg')}}");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      h2 {
+        color: #add8e6; /* Setting color for the h2 element */
+      }
+
+      label {
+        display: block;
+        margin-top: 20px;
+      }
+
+      input {
+        padding: 5px;
+      }
+
+      input[type="submit"] {
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #add8e6;
+        color: #000000;
+        border: none;
+        cursor: pointer;
+      }
+
+      #keyOutput {
+        margin-top: 20px;
+        color: white;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.274
+        ); /* Adjust the alpha value to control transparency */
+        border: 1px solid #ccccccc8;
+        padding: 20px;
+        border-radius: 10px; /* Optional: Add rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span> Homomorphic Encryption </span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index3.html"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index1.html"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="key.html">Key Generation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form1.html">RSA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="affineEncryption"
+                  >affine Encryption</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="homomorphic.html"
+                  >Homomorphic operations</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="affineDecryption"
+                  >affine Decryption</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page3.html">Encryption</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="result.html">Decryption</a>
+              </li>
+              <li></li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="logout()">
+                  <i class="fa fa-user" aria-hidden="true"></i> Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <h2>Key Generation</h2>
+
+    <form action="/key.html" method="post">
+      <input type="submit" value="Generate Key" />
+    </form>
+
+    {% if messages %}
+    <div id="keyOutput">
+      <h1>Public Key: {{ messages[0] }}</h1>
+      <h1>Private Key: {{ messages[1] }}</h1>
+      <h1>Time taken: {{ messages[2] }}</h1>
+    </div>
+    {% endif %}
+
+    <script>
+      function generateKey() {
+        // Get the text input value
+        var inputValue = document.getElementById("textInput").value;
+
+        // Generate a simple key (in this example, just reversing the input)
+        var generatedKey = inputValue.split("").reverse().join("");
+
+        // Display the generated key
+        document.getElementById("keyOutput").innerText =
+          "Generated Key: " + generatedKey;
+      }
+    </script>
+  </body>
+</html>

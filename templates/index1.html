@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/bootstrap.css')}}"
+    />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--owl slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <!-- font awesome style -->
+    <link
+      href="{{ url_for('static', filename='css/font-awesome.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link
+      href="{{ url_for('static', filename='css/style.css')}}"
+      rel="stylesheet"
+    />
+    <!-- responsive style -->
+    <link
+      href="{{ url_for('static', filename='css/responsive.css')}}"
+      rel="stylesheet"
+    />
+    <title>Project Home Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: url("{{ url_for('static', filename='images/FML-Homomorphic-Encryption.jpg') }}");
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #add8e6;
+      }
+
+      #header {
+        background-color: #4169e1;
+        color: white;
+        padding: 20px;
+      }
+
+      #content {
+        max-width: 800px;
+        height: 300px;
+        margin: 20px auto;
+        background-color: #add8e6;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span> Homomorphic Encryption </span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index3.html"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="index1.html"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="key.html">Key Generation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form1.html">RSA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="affineEncryption"
+                  >affine Encryption</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="homomorphic.html"
+                  >Homomorphic operations</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="affineDecryption"
+                  >affine Decryption</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page3.html">Encryption</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="result.html">Decryption</a>
+              </li>
+              <li></li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="logout()">
+                  <i class="fa fa-user" aria-hidden="true"></i> Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div id="header">
+      <h1>
+        Enhanced Homomorphic Encryption Technique using Extended Euclidean
+        Algorithm
+      </h1>
+    </div>
+
+    <div id="content">
+      <h1>Abstract</h1>
+      <p>
+        Confidential information transmission over the internet is a significant
+        challenge, with cryptographic algorithms being the best choice for
+        protection. Securing information over the cloud is another major
+        challenge. Homomorphic encryption is a promising method for securing
+        information in the cloud. This project aims in proposing RSA algorithm
+        using multiple public key pairs with Homomorphic Encryption, which
+        generates a key pair from multiple keys using RSA homomorphic
+        encryption. This technique uses mathematical logic to obtain the public
+        key directly, stopping attacks on finding the private key. The Extended
+        Euclidean Algorithm (EEA) is used for generating keys, following the RSA
+        Homomorphic encryption technique. Hence,the algorithm is fast and
+        secure, utilizing a modulo operator, and utilizing Homomorphic
+        operations to enhance security for confidential information in the
+        cloud.
+      </p>
+
+      <!-- Add more content as needed -->
+    </div>
+  </body>
+</html>
